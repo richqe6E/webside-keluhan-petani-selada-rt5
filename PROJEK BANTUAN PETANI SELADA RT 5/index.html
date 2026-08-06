@@ -1,3 +1,21 @@
+<!-- Chosen Palette: Warm Earthy Garden -->
+<!-- Application Structure Plan: 
+    Aplikasi dirancang sebagai portal edukasi dan alat bantu praktis (kalkulator) dalam satu halaman.
+    Struktur: 
+    - Header: Navigasi cepat.
+    - Hero Section: Konteks krisis El-Nino 2026.
+    - Diagnosa Section: Penjelasan ilmiah akar busuk & bintik hitam dengan grafik Chart.js.
+    - Produk Section: Penjelasan dosis H2O2 dan Trichoderma.
+    - Kalkulator Section: Input interaktif untuk memudahkan petani menghitung dosis tanpa salah.
+    - Laporan Section: Form untuk pengiriman data ke Google Sheets.
+-->
+<!-- Visualization & Content Choices: 
+    - Line Chart (Chart.js): Visualisasi korelasi suhu air vs oksigen (Hukum Henry).
+    - Interactive Cards: Untuk detail produk (H2O2, Trichoderma, Paranet).
+    - Kalkulator JS: Logika V1.M1 = V2.M2 untuk dosis kimia.
+-->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -321,7 +339,6 @@
             btn.innerText = "Mengirim...";
             btn.classList.add('opacity-50');
 
-            // Mengirim data ke Google Sheets via Web App URL
             fetch(WEB_APP_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -342,7 +359,6 @@
         };
 
         window.onload = function() {
-            // Chart Sains Hubungan Suhu vs Oksigen
             const ctx = document.getElementById('tempChart').getContext('2d');
             new Chart(ctx, {
                 type: 'line',
