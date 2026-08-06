@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Klinik Selada Pro - Panduan Lengkap Petani</title>
+    <title>Klinik Selada Pro - Portal Petani Pintar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
-        .glass-card { background: white; border: 1px solid #e2e8f0; border-radius: 24px; }
-        .logic-card { @apply bg-white p-6 rounded-[2rem] border-2 border-slate-100 relative overflow-hidden shadow-sm; }
+        .logic-card { @apply bg-white p-6 rounded-[2rem] border-2 border-slate-100 relative overflow-hidden shadow-sm hover:border-emerald-200 transition-all; }
         .keyword-tag { @apply bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-[10px] font-bold uppercase mt-2 inline-block; }
         .step-number { @apply w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center text-[10px] font-bold shrink-0; }
-        .tool-tip { @apply text-[10px] bg-amber-100 text-amber-800 p-2 rounded-xl mt-2 font-medium border border-amber-200; }
+        .tool-tip { @apply text-[10px] bg-amber-100 text-amber-800 p-3 rounded-xl mt-2 font-medium border border-amber-200; }
+        .price-badge { @apply bg-slate-100 text-slate-600 px-2 py-1 rounded text-[9px] font-bold mt-1 inline-block; }
     </style>
 </head>
 <body class="text-slate-800 pb-32">
@@ -23,56 +23,60 @@
         <div class="flex items-center gap-2">
             <div class="bg-emerald-600 w-10 h-10 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">🥬</div>
             <div>
-                <h1 class="font-extrabold text-emerald-900 text-sm leading-none uppercase tracking-tight">Klinik Selada</h1>
-                <p class="text-[9px] text-emerald-600 font-bold uppercase mt-1 tracking-widest italic">Siaga Kemarau</p>
+                <h1 class="font-extrabold text-emerald-900 text-sm leading-none uppercase tracking-tight text-left">Klinik Selada</h1>
+                <p class="text-[9px] text-emerald-600 font-bold uppercase mt-1 tracking-widest italic">Pusat Mitigasi Desa</p>
             </div>
         </div>
         <div class="text-right">
             <p class="text-[9px] font-bold text-slate-400 uppercase">Status Kebun</p>
-            <p class="text-[10px] text-red-600 font-black animate-pulse">🔥 KRITIS PANAS</p>
+            <p class="text-[10px] text-red-600 font-black animate-pulse">🔥 SIAGA KEMARAU</p>
         </div>
     </header>
 
-    <main class="max-w-xl mx-auto px-5 pt-6 space-y-10">
+    <main class="max-w-xl mx-auto px-5 pt-6 space-y-12">
         
-        <!-- Hero Section -->
-        <section id="home" class="text-center space-y-4">
-            <div class="bg-gradient-to-br from-emerald-800 to-emerald-950 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden text-left">
+        <!-- Hero: Masalah Utama -->
+        <section id="home" class="space-y-4">
+            <div class="bg-gradient-to-br from-emerald-800 to-emerald-950 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden">
                 <h2 class="text-2xl font-extrabold leading-tight">Selada Sakit Bukan <br>Karena Nasib.</h2>
                 <p class="mt-3 text-emerald-100 text-xs leading-relaxed opacity-90">
-                    Gunakan alat ukur dan bahan yang tepat. Di bawah ini adalah panduan lengkap cara cek nutrisi dan cara mengobati tanaman Anda.
+                    Akar busuk, daun berbintik, dan tanaman kerdil biasanya terjadi karena air tandon terlalu panas atau pH yang "terkunci". Gunakan panduan di bawah untuk mengobatinya.
                 </p>
                 <div class="absolute -right-6 -bottom-6 opacity-10 text-[8rem] rotate-12">🍃</div>
             </div>
         </section>
 
-        <!-- ALAT UKUR (BAGIAN BARU) -->
+        <!-- 1. ALAT UKUR (Paling Penting) -->
         <section id="alat" class="space-y-6">
             <h3 class="text-xl font-black text-slate-900 px-1 italic">1. Mengenal Alat Ukur</h3>
-            <p class="text-xs text-slate-500 px-1">Alat ini adalah "mata" Anda untuk melihat apakah tanaman lapar atau kehausan.</p>
+            <p class="text-xs text-slate-500 px-1">Tanpa alat ini, Anda tidak bisa tahu apakah tanaman lapar (kurang nutrisi) atau haus (kekurangan oksigen).</p>
 
             <!-- TDS METER -->
             <div class="logic-card border-emerald-200">
                 <div class="flex items-center gap-3 mb-3">
                     <span class="text-3xl">🖊️</span>
-                    <h4 class="font-bold text-slate-900">TDS Meter (Cek PPM)</h4>
+                    <h4 class="font-bold text-slate-900">TDS Meter (Cek Kekentalan Pupuk)</h4>
                 </div>
                 <p class="text-[13px] text-slate-600 leading-relaxed">
-                    Alat ini gunanya untuk mengukur <b>PPM (Parts Per Million)</b> atau seberapa "kental" pupuk di air Anda. 
+                    Alat ini berbentuk seperti pena digital. Gunanya untuk mengukur <b>PPM</b>. Jika PPM rendah, tanaman kerdil. Jika terlalu tinggi, ujung daun terbakar (*Tip Burn*).
                 </p>
                 <div class="mt-4 space-y-3">
                     <div class="flex gap-3 items-start text-xs bg-slate-50 p-3 rounded-2xl">
                         <span class="step-number">1</span>
-                        <span><b>Cara Pakai:</b> Buka tutupnya, nyalakan tombol ON, lalu celupkan ujungnya (sekitar 2 cm) ke air tandon.</span>
+                        <span>Buka tutup bawah, nyalakan tombol <b>ON</b>.</span>
                     </div>
                     <div class="flex gap-3 items-start text-xs bg-slate-50 p-3 rounded-2xl">
                         <span class="step-number">2</span>
-                        <span><b>Cara Baca:</b> Tunggu angkanya berhenti bergerak. Jika tertulis 800, berarti nutrisi Anda sudah pas untuk selada dewasa.</span>
+                        <span>Celupkan ujungnya (2-3 cm) ke air tandon. <b>Jangan merendam semua alat!</b></span>
+                    </div>
+                    <div class="flex gap-3 items-start text-xs bg-slate-50 p-3 rounded-2xl">
+                        <span class="step-number">3</span>
+                        <span>Baca angka yang muncul. Untuk selada dewasa, targetnya <b>800 PPM</b>.</span>
                     </div>
                 </div>
-                <div class="tool-tip">⚠️ <b>Penting:</b> Jangan merendam seluruh alat ke air, cukup ujungnya saja. Jika terendam semua, alat akan mati total (konslet).</div>
-                <p class="text-[11px] mt-3 font-bold text-slate-400 uppercase italic">Cari di toko dengan kata kunci:</p>
+                <div class="tool-tip">⚠️ <b>Penting:</b> Cuci ujung sensor dengan air bersih setelah dipakai agar sisa pupuk tidak mengerak.</div>
                 <span class="keyword-tag">TDS Meter Digital Hidroponik</span>
+                <br><span class="price-badge">Harga: Rp 15rb - Rp 25rb</span>
             </div>
 
             <!-- pH METER -->
@@ -82,109 +86,111 @@
                     <h4 class="font-bold text-slate-900">pH Meter (Cek Asam/Basa)</h4>
                 </div>
                 <p class="text-[13px] text-slate-600 leading-relaxed">
-                    Menentukan apakah "mulut" tanaman terbuka untuk makan. Jika pH terlalu tinggi (di atas 7.0), tanaman tidak bisa makan meski pupuknya banyak.
+                    Menentukan apakah "mulut" akar terbuka. Jika pH di atas 7.0, tanaman tidak bisa makan pupuk meskipun tandon Anda penuh nutrisi.
                 </p>
-                <div class="mt-4 space-y-3">
-                    <div class="flex gap-3 items-start text-xs bg-slate-50 p-3 rounded-2xl">
-                        <span class="step-number">1</span>
-                        <span><b>Cara Pakai:</b> Sama seperti TDS, celupkan hanya bagian ujung kaca sensornya saja ke air.</span>
-                    </div>
-                    <div class="flex gap-3 items-start text-xs bg-slate-50 p-3 rounded-2xl">
-                        <span class="step-number">2</span>
-                        <span><b>Target:</b> Untuk selada, angka yang baik adalah <b>5.5 sampai 6.5</b>.</span>
-                    </div>
+                <div class="mt-4 space-y-3 bg-blue-50 p-4 rounded-2xl">
+                    <p class="text-xs font-bold text-blue-800">Target pH Selada: 5.5 sampai 6.5</p>
+                    <p class="text-[11px] text-blue-600 mt-1">Jika angka di layar menunjukkan 7.5 atau 8.0, segera tambahkan cairan <b>pH Down</b>.</p>
                 </div>
-                <div class="tool-tip">⚠️ <b>Tips Awet:</b> Setelah dipakai, bilas ujungnya dengan air bersih lalu tutup kembali. Jangan biarkan sensornya kering terlalu lama.</div>
-                <p class="text-[11px] mt-3 font-bold text-slate-400 uppercase italic">Cari di toko dengan kata kunci:</p>
-                <span class="keyword-tag">pH Meter Digital Air</span>
+                <span class="keyword-tag">pH Meter Air Digital</span>
+                <br><span class="price-badge">Harga: Rp 35rb - Rp 50rb</span>
             </div>
         </section>
 
-        <!-- BAHAN & OBAT -->
+        <!-- 2. BAHAN & OBAT (Jujur & Praktis) -->
         <section id="bahan" class="space-y-6">
-            <h3 class="text-xl font-black text-slate-900 px-1 italic">2. Mengenal Bahan & Obat</h3>
-            
+            <h3 class="text-xl font-black text-slate-900 px-1 italic">2. Apa Itu AB Mix & Obat Lainnya?</h3>
+
             <!-- AB MIX -->
-            <div class="logic-card border-amber-200">
+            <div class="logic-card">
                 <div class="flex items-center gap-3 mb-3">
                     <span class="text-3xl">🍱</span>
-                    <h4 class="font-bold text-slate-900">Apa itu Nutrisi AB Mix?</h4>
+                    <h4 class="font-bold text-slate-900">AB Mix (Makanan Pokok)</h4>
                 </div>
                 <p class="text-[13px] text-slate-600 leading-relaxed">
-                    Ini adalah <b>"Makanan Pokok"</b>. Dijual dalam dua botol terpisah (A dan B). Harus dicampur keduanya ke air agar tanaman tumbuh besar.
+                    Ini bukan obat, tapi **Pupuk Utama**. Terdiri dari dua kantong: **A** (Kalsium) dan **B** (Unsur hara lain). 
+                    <b>Bentuknya:</b> Biasanya bubuk yang harus dicairkan dulu menjadi "Pekatan".
                 </p>
-                <div class="mt-4 p-4 bg-amber-50 rounded-2xl border border-amber-100 text-[11px]">
-                    <b>Bentuk:</b> Cairan pekat (A warna merah, B warna biru/hijau). <br>
-                    <b>Harga:</b> Sekitar Rp 15.000 - Rp 25.000 per set (ukuran 500ml).
+                <div class="mt-3 p-3 bg-slate-50 rounded-xl text-[11px]">
+                    <b>Cara Pakai:</b> Masukkan Pekatan A ke tandon, aduk. Baru masukkan Pekatan B, aduk lagi. Jangan dicampur jadi satu di dalam botol yang sama karena akan menggumpal (rusak).
                 </div>
-                <p class="text-[11px] mt-3 font-bold text-slate-400 uppercase italic">Kata Kunci:</p>
                 <span class="keyword-tag">Nutrisi AB Mix Selada</span>
+                <br><span class="price-badge">Harga: Rp 20rb (kemasan 250L)</span>
             </div>
 
             <!-- H2O2 -->
-            <div class="logic-card border-blue-200">
+            <div class="logic-card border-red-200">
                 <div class="flex items-center gap-3 mb-3">
                     <span class="text-3xl">🧪</span>
-                    <h4 class="font-bold text-slate-900">H2O2 (Oksigen Cair)</h4>
+                    <h4 class="font-bold text-slate-900">H2O2 (Obat Akar & Oksigen)</h4>
                 </div>
                 <p class="text-[13px] text-slate-600 leading-relaxed">
-                    Memberikan oksigen tambahan ke air saat cuaca panas agar akar tidak busuk.
+                    <b>Hidrogen Peroksida.</b> Ini adalah cairan bening seperti air tapi sangat sakti. Fungsinya membunuh jamur penyebab akar busuk dan menambah oksigen instan saat cuaca panas terik.
                 </p>
-                <div class="mt-4 p-4 bg-blue-50 rounded-2xl border border-blue-100 text-[11px]">
-                    <b>Bentuk:</b> Cairan bening seperti air. Gunakan kadar 50%. <br>
-                    <b>Harga:</b> Sekitar Rp 25.000 - Rp 40.000 per liter.
-                </div>
-                <p class="text-[11px] mt-3 font-bold text-slate-400 uppercase italic">Kata Kunci:</p>
-                <span class="keyword-tag">H2O2 50% Food Grade</span>
+                <div class="tool-tip">⚠️ <b>Hati-hati:</b> Jangan terkena tangan secara langsung (gatal/perih). Gunakan sarung tangan plastik.</div>
+                <span class="keyword-tag">H2O2 50% atau 3% Food Grade</span>
+                <br><span class="price-badge">Harga: Rp 30rb/liter</span>
             </div>
         </section>
 
-        <!-- JADWAL PERAWATAN -->
+        <!-- 3. PERAWATAN RUTIN -->
         <section id="perawatan" class="space-y-6">
-            <h3 class="text-xl font-black text-slate-900 px-1 italic">3. Jadwal Rutin Pagi & Siang</h3>
+            <h3 class="text-xl font-black text-slate-900 px-1 italic">3. Jadwal Perawatan Emas</h3>
             <div class="space-y-4">
-                <div class="bg-white p-5 rounded-[2rem] border-2 border-slate-100">
-                    <h4 class="text-xs font-black uppercase text-slate-400 mb-4 tracking-widest">Setiap Pagi (07:00)</h4>
+                <div class="bg-white p-5 rounded-[2rem] border-2 border-emerald-50 shadow-sm">
+                    <h4 class="text-xs font-black uppercase text-emerald-600 mb-4 tracking-widest flex items-center gap-2"><span>☀️</span> Setiap Pagi (07:00 - 08:30)</h4>
                     <ul class="space-y-3">
                         <li class="flex gap-3 items-start text-xs">
                             <span class="step-number">1</span>
-                            <span>Celup <b>TDS Meter</b>. Jika angka di bawah 800, tambah Nutrisi AB Mix sedikit demi sedikit.</span>
+                            <span>Cek <b>TDS</b>. Jika kurang dari 800, tambah Nutrisi AB Mix sedikit demi sedikit.</span>
                         </li>
                         <li class="flex gap-3 items-start text-xs">
                             <span class="step-number">2</span>
-                            <span>Celup <b>pH Meter</b>. Jika angka di atas 7.0, tambahkan pH Down agar tanaman bisa "makan".</span>
+                            <span>Cek <b>pH</b>. Jika di atas 7.0, teteskan pH Down.</span>
+                        </li>
+                        <li class="flex gap-3 items-start text-xs">
+                            <span class="step-number">3</span>
+                            <span>Buang daun yang kuning atau busuk agar tidak menular ke tanaman lain.</span>
                         </li>
                     </ul>
+                </div>
+                
+                <div class="bg-slate-900 text-white p-6 rounded-[2rem] shadow-xl">
+                    <h4 class="text-xs font-black uppercase text-emerald-400 mb-4 tracking-widest flex items-center gap-2"><span>🚨</span> Jika Mati Lampu / Listrik</h4>
+                    <p class="text-[11px] leading-relaxed opacity-80 mb-3">Pompa mati berarti air diam. Air diam di cuaca panas akan membunuh akar dalam 2 jam.</p>
+                    <div class="bg-white/10 p-4 rounded-2xl text-[11px] font-bold">
+                        Solusi: Aduk-aduk air tandon secara manual setiap 30 menit atau gunakan pompa udara (aerator) bertenaga baterai.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- KALKULATOR -->
+        <!-- 4. KALKULATOR DOSIS -->
         <section id="hitung" class="space-y-6">
-            <div class="bg-slate-900 text-white rounded-[2.5rem] p-8 shadow-xl">
-                <h4 class="text-xl font-black mb-6 flex items-center gap-2"><span>🧮</span> Kalkulator Dosis</h4>
+            <div class="bg-emerald-900 text-white rounded-[2.5rem] p-8 shadow-xl">
+                <h4 class="text-xl font-black mb-6 flex items-center gap-2"><span>🧮</span> Kalkulator Pintar</h4>
                 
-                <div class="space-y-6 text-left">
+                <div class="space-y-6">
                     <div>
-                        <label class="text-[10px] uppercase font-black text-slate-400 ml-1">Pilih Apa yang Ingin Dihitung:</label>
-                        <select id="calcType" onchange="toggleCalc()" class="w-full bg-slate-800 border-none rounded-2xl p-4 mt-2 font-bold text-white text-sm">
-                            <option value="abmix">Tambah Nutrisi AB Mix (Naikkan PPM)</option>
-                            <option value="h2o2">Dosis H2O2 (Obati Akar Busuk)</option>
+                        <label class="text-[10px] uppercase font-black text-emerald-300 ml-1">Pilih Apa yang Mau Dihitung:</label>
+                        <select id="calcType" onchange="toggleCalc()" class="w-full bg-emerald-800 border-none rounded-2xl p-4 mt-2 font-bold text-white text-sm outline-none">
+                            <option value="abmix">Tambah Nutrisi AB Mix (PPM)</option>
+                            <option value="h2o2">Dosis H2O2 (Oksigen/Obat Akar)</option>
                             <option value="phdown">Dosis pH Down (Turunkan pH)</option>
                         </select>
                     </div>
 
                     <div>
-                        <label class="text-[10px] uppercase font-black text-slate-400 ml-1">Total Air di Tandon (Liter):</label>
-                        <input type="number" id="volAir" value="100" class="w-full bg-slate-800 border-none rounded-2xl p-4 mt-2 font-bold text-white">
+                        <label class="text-[10px] uppercase font-black text-emerald-300 ml-1">Total Air di Tandon (Liter):</label>
+                        <input type="number" id="volAir" value="100" class="w-full bg-emerald-800 border-none rounded-2xl p-4 mt-2 font-bold text-white outline-none">
                     </div>
 
-                    <div id="inputExtra" class="space-y-4 text-xs font-bold"></div>
+                    <div id="inputExtra" class="space-y-4"></div>
 
-                    <button onclick="hitungSemua()" class="w-full py-5 bg-emerald-500 text-white rounded-2xl font-black shadow-lg hover:bg-emerald-400 transition-all">Hitung Sekarang</button>
+                    <button onclick="hitungSemua()" class="w-full py-5 bg-emerald-500 text-white rounded-2xl font-black shadow-lg hover:bg-emerald-400 transition-all">Hitung Takaran</button>
                     
-                    <div id="hasilBox" class="hidden bg-white text-slate-900 p-6 rounded-[2rem] text-center border-4 border-emerald-500">
-                        <p class="text-[10px] opacity-60 uppercase font-black tracking-widest">Takaran Yang Harus Dituang:</p>
+                    <div id="hasilBox" class="hidden bg-white text-slate-900 p-6 rounded-[2rem] text-center border-4 border-emerald-500 transition-all">
+                        <p class="text-[10px] opacity-60 uppercase font-black tracking-widest">Gunakan Sebanyak:</p>
                         <p class="text-4xl font-black mt-2 text-emerald-700"><span id="valHasil">0</span> <span class="text-base font-normal" id="unitHasil">ml</span></p>
                         <p class="text-[11px] mt-4 italic font-medium leading-relaxed text-slate-500" id="ketHasil"></p>
                     </div>
@@ -192,16 +198,27 @@
             </div>
         </section>
 
-        <!-- Form Lapor -->
+        <!-- 5. FORM LAPOR (DATABASE FIX) -->
         <section id="lapor" class="space-y-6 pb-20">
             <div class="bg-white rounded-[2.5rem] p-8 border border-slate-200 text-center shadow-sm">
                 <h3 class="text-xl font-black text-slate-900 mb-2">Lapor Kondisi Kebun</h3>
+                <p class="text-xs text-slate-400 mb-6">Data ini akan dikirim langsung ke database pusat untuk dipantau.</p>
                 <form id="formPetani" class="space-y-4 text-left">
-                    <input type="text" name="nama" placeholder="Nama Anda" required class="w-full p-5 bg-slate-50 border-none rounded-2xl text-sm font-bold">
-                    <textarea name="keluhan" rows="3" placeholder="Apa masalah selada Anda hari ini?" required class="w-full p-5 bg-slate-50 border-none rounded-2xl text-sm font-medium"></textarea>
-                    <button type="submit" id="btnKirim" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black shadow-xl">Kirim Laporan</button>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Nama Lengkap</label>
+                        <input type="text" name="nama" placeholder="Contoh: Pak Budi" required class="w-full p-5 bg-slate-50 border-none rounded-2xl text-sm font-bold mt-1 focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Asal RT</label>
+                        <input type="text" name="rt" placeholder="Contoh: RT 04" required class="w-full p-5 bg-slate-50 border-none rounded-2xl text-sm font-bold mt-1 focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-slate-400 uppercase ml-2">Detail Keluhan</label>
+                        <textarea name="keluhan" rows="3" placeholder="Contoh: Daun selada banyak bintik hitam dan kerdil..." required class="w-full p-5 bg-slate-50 border-none rounded-2xl text-sm font-medium mt-1 focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+                    </div>
+                    <button type="submit" id="btnKirim" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black shadow-xl hover:bg-black transition-all">Kirim Laporan</button>
                 </form>
-                <div id="sukses" class="hidden mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-2xl text-[11px] font-black">✅ LAPORAN BERHASIL TERKIRIM!</div>
+                <div id="sukses" class="hidden mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-2xl text-[11px] font-black">✅ LAPORAN BERHASIL MASUK DATABASE!</div>
             </div>
         </section>
 
@@ -209,26 +226,27 @@
 
     <!-- Bottom Navigation -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-slate-100 flex justify-around items-center h-20 z-50 px-4">
-        <button onclick="scrollToId('home')" class="flex flex-col items-center gap-1">
+        <button onclick="scrollToId('home')" class="flex flex-col items-center gap-1 opacity-60 hover:opacity-100">
             <span class="text-xl">🏠</span>
-            <span class="text-[8px] font-bold text-slate-400 uppercase">Beranda</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Beranda</span>
         </button>
-        <button onclick="scrollToId('alat')" class="flex flex-col items-center gap-1">
+        <button onclick="scrollToId('alat')" class="flex flex-col items-center gap-1 opacity-60 hover:opacity-100">
             <span class="text-xl">🖊️</span>
-            <span class="text-[8px] font-bold text-slate-400 uppercase">Alat Ukur</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Alat</span>
         </button>
-        <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center -mt-10 border-4 border-slate-50 shadow-xl text-white text-xl" onclick="scrollToId('lapor')">+</div>
-        <button onclick="scrollToId('perawatan')" class="flex flex-col items-center gap-1">
-            <span class="text-xl">📋</span>
-            <span class="text-[8px] font-bold text-slate-400 uppercase">Jadwal</span>
-        </button>
-        <button onclick="scrollToId('hitung')" class="flex flex-col items-center gap-1">
+        <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center -mt-10 border-4 border-white shadow-xl text-white text-2xl cursor-pointer hover:bg-emerald-500" onclick="scrollToId('lapor')">+</div>
+        <button onclick="scrollToId('hitung')" class="flex flex-col items-center gap-1 opacity-60 hover:opacity-100">
             <span class="text-xl">🧮</span>
-            <span class="text-[8px] font-bold text-slate-400 uppercase">Hitung</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Hitung</span>
+        </button>
+        <button onclick="scrollToId('perawatan')" class="flex flex-col items-center gap-1 opacity-60 hover:opacity-100">
+            <span class="text-xl">📋</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Jadwal</span>
         </button>
     </nav>
 
     <script>
+        // GANTI INI DENGAN URL WEB APP GOOGLE SCRIPT ANDA
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwxkM9UMiJMRmMs2vDAjCPUNcUcrOVA7-YtwN3XouBXsElKrYspeh7VWqJRmupY3_k0/exec";
 
         function scrollToId(id) {
@@ -243,37 +261,43 @@
 
             if (type === 'abmix') {
                 container.innerHTML = `
-                    <label class="text-slate-400 uppercase tracking-widest">Ingin Naik Berapa PPM?</label>
-                    <input type="number" id="targetPpm" placeholder="Contoh: 400" class="w-full bg-slate-800 border-none rounded-2xl p-4 mt-1 text-white">
+                    <label class="text-[10px] uppercase font-black text-emerald-300 ml-1">Ingin Naik Berapa PPM?</label>
+                    <input type="number" id="targetPpm" placeholder="Contoh: 400" class="w-full bg-emerald-800 border-none rounded-2xl p-4 mt-1 text-white font-bold outline-none">
+                    <p class="text-[9px] opacity-60 italic mt-1 text-emerald-200">Kebutuhan dasar selada: 800 PPM</p>
                 `;
             } else if (type === 'h2o2') {
                 container.innerHTML = `
-                    <label class="text-slate-400 uppercase tracking-widest">Kondisi Akar Saat Ini:</label>
-                    <select id="mode" class="w-full bg-slate-800 border-none rounded-2xl p-4 mt-1 text-white font-bold">
+                    <label class="text-[10px] uppercase font-black text-emerald-300 ml-1">Kondisi Akar Saat Ini:</label>
+                    <select id="mode" class="w-full bg-emerald-800 border-none rounded-2xl p-4 mt-1 text-white font-bold outline-none">
                         <option value="1.5">Pencegahan (Akar masih putih)</option>
-                        <option value="4">Pengobatan (Akar mulai coklat)</option>
+                        <option value="4">Pengobatan (Akar coklat/busuk)</option>
                     </select>
+                `;
+            } else if (type === 'phdown') {
+                container.innerHTML = `
+                    <p class="text-[10px] text-emerald-300 font-bold uppercase italic">Tuangkan sedikit-sedikit mengikuti rumus di bawah.</p>
                 `;
             }
         }
 
         function hitungSemua() {
             const type = document.getElementById('calcType').value;
-            const vol = parseFloat(document.getElementById('volAir').value);
+            const vol = parseFloat(document.getElementById('volAir').value || 0);
             let hasil = 0; let unit = "ml"; let ket = "";
 
             if (type === 'abmix') {
                 const target = parseFloat(document.getElementById('targetPpm').value || 0);
+                // Rumus kasar: (Vol Air x Target PPM) / 1000 / 2 = ml Pekatan A (dan B)
                 hasil = (vol * target) / 1000 / 2;
-                unit = "ml (Nutrisi A & B)";
-                ket = "Gunakan TDS Meter setelah mencampur untuk memastikan angka PPM sudah naik sesuai target.";
+                unit = "ml (Masing-masing A & B)";
+                ket = "Contoh: Jika hasilnya 20ml, tuang 20ml Pekatan A lalu 20ml Pekatan B. Aduk rata.";
             } else if (type === 'h2o2') {
                 const mode = parseFloat(document.getElementById('mode').value);
                 hasil = vol * mode;
-                ket = "Tuangkan saat sore hari agar oksigen bertahan lebih lama di dalam air tandon.";
+                ket = "Tuangkan saat sore hari agar oksigen bertahan lebih lama karena suhu sudah turun.";
             } else if (type === 'phdown') {
                 hasil = (vol / 100) * 5; 
-                ket = "Gunakan dosis ini, tunggu 15 menit, lalu cek kembali dengan pH Meter.";
+                ket = "Tuangkan " + hasil.toFixed(0) + " ml, tunggu 15 menit, lalu cek kembali dengan pH Meter. Ulangi jika belum turun.";
             }
 
             document.getElementById('valHasil').innerText = hasil.toFixed(1);
@@ -282,15 +306,36 @@
             document.getElementById('hasilBox').classList.remove('hidden');
         }
 
+        // LOGIKA PENGIRIMAN DATA KE GOOGLE SHEETS
         document.getElementById('formPetani').onsubmit = function(e) {
             e.preventDefault();
             const btn = document.getElementById('btnKirim');
-            btn.innerText = "Mengirim..."; btn.disabled = true;
-            const params = new URLSearchParams(new FormData(e.target));
-            fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', body: params.toString() })
+            const sukses = document.getElementById('sukses');
+            
+            btn.innerText = "Sabar, Sedang Mengirim...";
+            btn.disabled = true;
+
+            const params = new URLSearchParams(new FormData(this));
+
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Penting agar tidak kena error CORS di browser
+                body: params.toString(),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
             .then(() => {
-                document.getElementById('sukses').classList.remove('hidden');
-                e.target.reset(); btn.innerText = "Kirim Laporan"; btn.disabled = false;
+                sukses.classList.remove('hidden');
+                btn.innerText = "Kirim Laporan Lagi";
+                btn.disabled = false;
+                this.reset();
+                setTimeout(() => sukses.classList.add('hidden'), 5000);
+            })
+            .catch(error => {
+                alert("Waduh, koneksi bermasalah: " + error);
+                btn.innerText = "Coba Kirim Lagi";
+                btn.disabled = false;
             });
         };
 
