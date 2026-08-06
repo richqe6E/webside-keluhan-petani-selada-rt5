@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Portal Mitigasi Selada Hidroponik - Riki Rivaldi</title>
+    <meta name="description" content="Panduan lengkap penanganan gagal tumbuh selada, bintik hitam, dan akar busuk akibat El Nino 2026.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fdfbf7; 
+            -webkit-tap-highlight-color: transparent;
+        }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 300px; 
+            max-height: 400px; 
+        }
+        .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .glass-card { background: white; border: 1px solid #e2e8f0; border-radius: 24px; }
+        .product-card { border-left: 6px solid #10b981; }
+        .warning-card { border-left: 6px solid #f59e0b; }
+        scroll-behavior: smooth;
+    </style>
+</head>
+<body class="text-slate-800 pb-32">
+
+    <!-- Header Mobile Friendly -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-emerald-100 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="bg-emerald-600 w-10 h-10 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">🥬</div>
+            <div>
+                <h1 class="font-extrabold text-emerald-900 text-sm leading-none tracking-tight">KLINIK SELADA</h1>
+                <p class="text-[9px] text-emerald-600 font-bold uppercase mt-1 tracking-widest">Sains & Mitigasi 2026</p>
+            </div>
+        </div>
+        <div class="text-right">
+            <p class="text-[9px] font-bold text-slate-400 uppercase">Peringatan Iklim</p>
+            <p class="text-[10px] text-orange-600 font-bold italic animate-pulse">☀️ Ekstrem El-Nino</p>
+        </div>
+    </header>
+
+    <main class="max-w-xl mx-auto px-5 pt-6 space-y-10">
+        
+        <!-- Welcome & Context -->
+        <section id="home" class="space-y-4">
+            <div class="bg-gradient-to-br from-emerald-800 to-emerald-950 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-extrabold leading-tight">Selada Anda Gagal Tumbuh Besar?</h2>
+                    <p class="mt-4 text-emerald-100 text-sm leading-relaxed opacity-90">
+                        Agustus 2026 adalah puncak panas El-Nino. Jika selada Anda kerdil, akar berwarna cokelat, atau daun penuh bintik hitam, itu bukan sekadar nasib. Ada alasan ilmiah di baliknya. Mari kita pelajari dan selamatkan panen Anda.
+                    </p>
+                </div>
+                <div class="absolute -right-8 -bottom-8 opacity-10 text-[10rem] rotate-12 select-none">🌱</div>
+            </div>
+        </section>
+
+        <!-- ANALISIS MASALAH: Akar & Daun -->
+        <section id="sebab" class="space-y-6">
+            <div class="text-center px-4">
+                <h3 class="text-2xl font-extrabold text-slate-900">Mendiagnosa Penyakit</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">Pahami musuh tanaman Anda agar tahu cara mengobatinya dengan tepat.</p>
+            </div>
+
+            <!-- Penjelasan Mendalam Akar Busuk -->
+            <div class="glass-card p-6 space-y-4 shadow-sm border-t-4 border-t-red-500">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🥀</span>
+                    <h4 class="font-bold text-lg text-red-900">Akar Busuk (Root Rot / Pythium)</h4>
+                </div>
+                <div class="text-sm text-slate-600 space-y-3 leading-relaxed">
+                    <p><b>Mengapa Terjadi?</b> Selada butuh Oksigen untuk bernapas melalui akar. Saat cuaca sangat panas, air tandon ikut memanas (>28°C). Secara ilmiah, <b>semakin panas air, semakin sulit oksigen larut di dalamnya.</b></p>
+                    <p>Akibatnya, akar "tercekik" dan stres. Dalam kondisi lemah ini, jamur <i>Pythium</i> menyerang dan membuat akar berlendir cokelat, berbau, dan akhirnya mati.</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                    <h5 class="text-[10px] font-black text-blue-800 uppercase mb-3 text-center tracking-widest">Data Sains: Suhu Air vs Napas Akar</h5>
+                    <div class="chart-container">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                    <p class="text-[10px] text-blue-600 mt-3 italic text-center leading-tight px-4">
+                        Lihat: Begitu suhu naik ke arah kanan, oksigen (biru) turun drastis. Di atas 28°C adalah zona bahaya kematian akar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Penjelasan Mendalam Bintik Hitam -->
+            <div class="glass-card p-6 space-y-4 shadow-sm border-t-4 border-t-amber-600">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🌑</span>
+                    <h4 class="font-bold text-lg text-amber-900">Bintik Hitam (Cercospora)</h4>
+                </div>
+                <div class="text-sm text-slate-600 space-y-3 leading-relaxed">
+                    <p><b>Mengapa Terjadi?</b> Bintik hitam adalah tanda imun tanaman sedang hancur. Ketika akar sakit akibat panas, tanaman tidak bisa menyerap kalsium dan nutrisi pertahanan diri.</p>
+                    <p>Spora jamur di udara akan tumbuh subur di daun yang lembap karena udara panas. Titik-titik hitam ini adalah "luka" yang mematikan sel daun sehingga selada tidak bisa tumbuh besar dan tidak laku dijual.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- APOTEK & SOLUSI: Produk Pendukung -->
+        <section id="obat" class="space-y-6">
+            <div class="text-center px-4">
+                <h3 class="text-2xl font-extrabold text-slate-900">Apotek & Solusi Tanaman</h3>
+                <p class="text-xs text-slate-500 mt-2 leading-relaxed">Gunakan alat dan obat berikut untuk menghentikan kerusakan.</p>
+            </div>
+
+            <!-- Produk 1: H2O2 -->
+            <div class="bg-white rounded-[2rem] p-7 border border-slate-100 shadow-sm space-y-4 product-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h4 class="font-black text-xl text-emerald-900">H₂O₂ (Hidrogen Peroksida 50%)</h4>
+                        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mt-1">Suntikan Oksigen Instan</p>
+                    </div>
+                    <span class="text-3xl">🧪</span>
+                </div>
+                <div class="text-sm text-slate-600 space-y-3">
+                    <p><b>Fungsi:</b> Sebagai sumber oksigen tambahan dan pembunuh bakteri/jamur seketika di dalam air.</p>
+                    <p><b>Manfaat:</b> Membersihkan tandon dari lendir jamur dan membantu akar "bernapas" kembali meskipun air sedang panas.</p>
+                    <div class="bg-emerald-50 p-4 rounded-2xl">
+                        <p class="font-bold text-emerald-800 text-xs">Aturan Pakai:</p>
+                        <ul class="text-xs text-emerald-700 mt-2 space-y-2 list-disc ml-4 leading-relaxed">
+                            <li><b>Pencegahan:</b> 1-2 ml per 1 Liter air tandon (setiap 3 hari).</li>
+                            <li><b>Pengobatan:</b> 4-5 ml per 1 Liter air jika akar sudah cokelat.</li>
+                            <li>Pastikan dicampur merata ke air tandon di pagi hari.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 2: Trichoderma -->
+            <div class="bg-white rounded-[2rem] p-7 border border-slate-100 shadow-sm space-y-4 product-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h4 class="font-black text-xl text-emerald-900">Trichoderma (Agensia Hayati)</h4>
+                        <p class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mt-1">Penjaga Akar Alami</p>
+                    </div>
+                    <span class="text-3xl">🦠</span>
+                </div>
+                <div class="text-sm text-slate-600 space-y-3">
+                    <p><b>Fungsi:</b> Jamur baik yang bertugas melawan dan memakan jamur jahat (Pythium).</p>
+                    <p><b>Manfaat:</b> Menciptakan perisai di sekitar akar agar tidak mudah busuk meskipun cuaca tidak mendukung.</p>
+                    <div class="bg-emerald-50 p-4 rounded-2xl">
+                        <p class="font-bold text-emerald-800 text-xs">Aturan Pakai:</p>
+                        <ul class="text-xs text-emerald-700 mt-2 space-y-2 list-disc ml-4 leading-relaxed">
+                            <li>Larutkan 10 gram ke dalam 10 Liter air.</li>
+                            <li>Gunakan untuk merendam rockwool atau kocor ke instalasi saat pindah tanam.</li>
+                            <li><b>Jangan</b> dicampur bersamaan dengan H2O2 atau kaporit (berikan jarak 3 hari).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fasilitas Fisik: Paranet & Kaporit -->
+            <div class="bg-slate-900 text-white rounded-[2.5rem] p-8 shadow-xl space-y-8">
+                <h4 class="text-xl font-bold flex items-center gap-2 italic">
+                    <span>🏗️</span> Perbaikan Instalasi
+                </h4>
+                
+                <div class="space-y-4">
+                    <div class="warning-card pl-4">
+                        <h5 class="text-emerald-400 font-bold uppercase text-xs tracking-widest">1. Mengapa Harus Paranet?</h5>
+                        <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                            <b>Fungsi:</b> Paranet bertindak sebagai "Topi" raksasa. Tanpa paranet, sinar matahari langsung memanaskan pipa PVC dan tandon. Air di dalamnya bisa mencapai 35°C! 
+                            <br><br><b>Manfaat:</b> Menurunkan suhu air 2-5°C secara konstan. Penurunan 1 derajat saja sangat berarti untuk menyelamatkan kadar oksigen selada Anda.
+                        </p>
+                    </div>
+
+                    <div class="warning-card pl-4 pt-4 border-t border-white/10">
+                        <h5 class="text-emerald-400 font-bold uppercase text-xs tracking-widest">2. Mengapa Harus Kaporit?</h5>
+                        <p class="text-xs text-slate-300 leading-relaxed mt-2">
+                            <b>Fungsi:</b> Pembasmi total spora jamur yang menempel di dinding pipa dan tandon dari musim sebelumnya.
+                            <br><br><b>Cara Pakai:</b> Hanya gunakan saat **TIDAK ADA TANAMAN** (sterilisasi antar musim). Dosis 20gr per 1000L. Putar air kaporit selama 24 jam, lalu buang dan bilas bersih sebelum mulai tanam baru.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KALKULATOR DOSIS -->
+        <section id="hitung" class="space-y-4">
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-xl border border-emerald-50">
+                <h4 class="text-xl font-black text-emerald-900 mb-6 flex items-center gap-2">
+                    <span>🧮</span> Kalkulator Dosis H₂O₂
+                </h4>
+                <div class="space-y-5">
+                    <div>
+                        <label class="text-[10px] uppercase font-black text-slate-400 ml-1 tracking-widest">Volume Air Tandon (Liter)</label>
+                        <input type="number" id="volAir" value="100" class="w-full bg-slate-50 border-none rounded-2xl p-5 mt-2 focus:ring-2 focus:ring-emerald-500 font-bold text-lg" placeholder="Contoh: 100">
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase font-black text-slate-400 ml-1 tracking-widest">Kondisi Tanaman Saat Ini</label>
+                        <select id="mode" class="w-full bg-slate-50 border-none rounded-2xl p-5 mt-2 focus:ring-2 focus:ring-emerald-500 font-bold">
+                            <option value="1.5">Rutin / Pencegahan (1.5 ml/L)</option>
+                            <option value="4">Darurat / Akar Busuk (4 ml/L)</option>
+                        </select>
+                    </div>
+                    <button onclick="hitungDosis()" class="w-full py-5 bg-emerald-600 text-white rounded-2xl font-black shadow-lg active:scale-95 transition-transform text-lg">Hitung Kebutuhan Obat</button>
+                    
+                    <div id="hasilBox" class="hidden bg-emerald-950 text-white p-7 rounded-[2rem] text-center shadow-inner">
+                        <p class="text-[10px] opacity-60 uppercase font-bold tracking-widest">Takaran H₂O₂ (50%) Anda:</p>
+                        <p class="text-5xl font-black mt-2"><span id="valHasil">0</span> <span class="text-base font-normal">ml</span></p>
+                        <p class="text-[10px] mt-5 italic opacity-50 leading-relaxed">*Tuangkan perlahan ke tandon, jangan terkena kulit langsung.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM KELUHAN & KONTAK -->
+        <section id="lapor" class="space-y-4">
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-slate-100">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-black text-slate-900">Laporan Keluhan Petani</h3>
+                    <p class="text-xs text-slate-500 mt-2">Kirim data Anda agar kami bisa memantau persebaran penyakit.</p>
+                </div>
+                
+                <form id="formPetani" class="space-y-4">
+                    <input type="text" name="nama" placeholder="Nama Lengkap Anda" required class="w-full p-5 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-500 font-medium">
+                    <input type="text" name="rt" placeholder="Asal Dusun / RT" required class="w-full p-5 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-500 font-medium">
+                    <textarea name="keluhan" rows="4" placeholder="Ceritakan kondisi selada Anda (warna akar, usia tanam, dll)..." required class="w-full p-5 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-emerald-500 font-medium"></textarea>
+                    
+                    <button type="submit" id="btnKirim" class="w-full py-5 bg-slate-900 text-white rounded-2xl font-black text-lg shadow-xl active:scale-95 transition-transform">Kirim Laporan Real-time</button>
+                </form>
+
+                <div id="sukses" class="hidden mt-6 p-5 bg-emerald-100 text-emerald-800 rounded-2xl text-center text-sm font-bold animate-bounce">
+                    ✅ Laporan Terkirim ke Spreadsheet!
+                </div>
+            </div>
+
+            <!-- UNIT BANTUAN -->
+            <div class="mt-8 p-8 bg-emerald-50 rounded-[2.5rem] border border-emerald-100 text-center">
+                <div class="w-24 h-24 bg-white rounded-full mx-auto flex items-center justify-center text-5xl shadow-md mb-4 border-4 border-emerald-200">👨‍🌾</div>
+                <h4 class="font-black text-emerald-900 text-xl">Unit Bantuan Teknis</h4>
+                <p class="text-xs text-emerald-700 font-bold uppercase tracking-widest mt-1">Riki Rivaldi</p>
+                
+                <div class="mt-6 bg-white p-7 rounded-[2rem] shadow-sm inline-block w-full">
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Hubungi Via Telepon / SMS:</p>
+                    <p class="text-2xl font-black text-slate-900">082259871192</p>
+                </div>
+                <p class="text-[10px] text-slate-400 mt-6 leading-relaxed italic px-4">
+                    Silakan simpan nomor di atas untuk konsultasi langsung atau laporan darurat.
+                </p>
+            </div>
+        </section>
+
+        <footer class="text-center py-12 px-6 text-slate-400 text-[10px] font-medium leading-relaxed mb-10">
+            <p>© 2026 Portal Mitigasi Selada Hidroponik.</p>
+            <p>Dikembangkan oleh Riki Rivaldi untuk ketahanan pangan nasional.</p>
+        </footer>
+
+    </main>
+
+    <!-- Navigation Bar Bawah -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-slate-100 flex justify-around items-center h-20 safe-area-bottom z-50 shadow-2xl">
+        <button onclick="scrollToId('home')" class="flex flex-col items-center gap-1 flex-1">
+            <span class="text-xl">🏠</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Beranda</span>
+        </button>
+        <button onclick="scrollToId('sebab')" class="flex flex-col items-center gap-1 flex-1">
+            <span class="text-xl">🔍</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Penyebab</span>
+        </button>
+        <button onclick="scrollToId('lapor')" class="flex flex-col items-center gap-1 flex-1 relative">
+            <div class="w-14 h-14 bg-emerald-600 rounded-full flex items-center justify-center -mt-14 border-[6px] border-[#fdfbf7] shadow-xl text-white font-bold">
+                +
+            </div>
+            <span class="text-[8px] font-bold text-emerald-600 uppercase mt-1">Lapor</span>
+        </button>
+        <button onclick="scrollToId('obat')" class="flex flex-col items-center gap-1 flex-1">
+            <span class="text-xl">💊</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Obat</span>
+        </button>
+        <button onclick="scrollToId('hitung')" class="flex flex-col items-center gap-1 flex-1">
+            <span class="text-xl">🧮</span>
+            <span class="text-[8px] font-bold text-slate-400 uppercase tracking-tighter">Hitung</span>
+        </button>
+    </nav>
+
+    <script>
+        /**
+         * PENTING: Link ini adalah link /exec Anda yang sudah benar.
+         */
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzRm_A1xeLMMK4S2u5sq2yzYquQbv_wm3joBUMjPtS0GYJk-qDdlbpSqYMQxFiaYug/exec";
+
+        function scrollToId(id) {
+            const element = document.getElementById(id);
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+        }
+
+        function hitungDosis() {
+            const v = parseFloat(document.getElementById('volAir').value);
+            const m = parseFloat(document.getElementById('mode').value);
+            if(isNaN(v) || v <= 0) {
+                alert("Harap masukkan volume air yang benar!");
+                return;
+            }
+            const res = Math.round(v * m);
+            document.getElementById('valHasil').innerText = res.toLocaleString('id-ID');
+            document.getElementById('hasilBox').classList.remove('hidden');
+        }
+
+        document.getElementById('formPetani').onsubmit = function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btnKirim');
+            const data = {
+                nama: e.target.nama.value,
+                rt: e.target.rt.value,
+                keluhan: e.target.keluhan.value
+            };
+
+            btn.disabled = true;
+            btn.innerText = "Mengirim...";
+            btn.classList.add('opacity-50');
+
+            // Mengirim data ke Google Sheets via Web App URL
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(() => {
+                e.target.reset();
+                btn.disabled = false;
+                btn.innerText = "Kirim Laporan Lagi";
+                btn.classList.remove('opacity-50');
+                document.getElementById('sukses').classList.remove('hidden');
+                setTimeout(() => { document.getElementById('sukses').classList.add('hidden'); }, 6000);
+            }).catch(err => {
+                alert("Gagal mengirim. Pastikan Anda sudah Deploy sebagai 'Anyone'.");
+                btn.disabled = false;
+                btn.innerText = "Coba Lagi";
+            });
+        };
+
+        window.onload = function() {
+            // Chart Sains Hubungan Suhu vs Oksigen
+            const ctx = document.getElementById('tempChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['20°C', '24°C', '28°C', '32°C', '36°C'],
+                    datasets: [{
+                        label: 'Kadar Oksigen (PPM)',
+                        data: [9.1, 8.4, 7.8, 7.2, 6.7],
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointRadius: 6,
+                        pointBackgroundColor: '#fff'
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: { enabled: true }
+                    },
+                    scales: {
+                        y: { 
+                            display: true, 
+                            min: 6, 
+                            max: 10, 
+                            ticks: { font: { size: 9 }, color: '#94a3b8' },
+                            grid: { color: '#f1f5f9' }
+                        },
+                        x: { 
+                            ticks: { font: { size: 10, weight: 'bold' }, color: '#475569' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
